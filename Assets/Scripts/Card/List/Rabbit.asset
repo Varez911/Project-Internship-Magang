@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e518cfbc3384a66914d7873b4ca1b76, type: 3}
+  m_Name: Rabbit
+  m_EditorClassIdentifier: 
+  cardName: Rabbit
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+    volutpat nisi vehicula quam commodo, vitae pulvinar erat feugiat. Fusce varius,
+    nibh quis tincidunt finibus, nisi arcu aliquet urna, eget tempus justo nisi sed
+    tellus. Nunc pretium tortor eu sem maximus vehicula. Vestibulum at massa elit.
+    In lobortis tincidunt ante non suscipit. Nulla eleifend, metus vitae volutpat
+    consectetur, eros justo dapibus ipsum, commodo convallis risus urna ut risus.
+    Aenean egestas mi nisl, non lacinia neque gravida at.\r"
+  cardThumbnail: {fileID: 21300000, guid: cd928315d2d77564fb9db08d718c5efa, type: 3}
+  cardObject: {fileID: 1940725992751248, guid: 36dbe61bd75ee1247b4f749534847ff0, type: 3}
