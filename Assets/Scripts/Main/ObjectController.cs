@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObjectController : MonoBehaviour
 {
-    [SerializeField] private float rotationSpeed = 200f;
+    [SerializeField] private float rotationSpeed = 5f;
     
     // Start is called before the first frame update
     void Start()
@@ -15,9 +15,11 @@ public class ObjectController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.touchCount > 0)
         {
-            transform.Rotate((Input.GetAxis("Mouse Y") * rotationSpeed * Time.deltaTime), (-Input.GetAxis("Mouse X") * rotationSpeed * Time.deltaTime), 0, Space.World);
+            float pointer_x = Input.touches[0].deltaPosition.x;
+            float pointer_y = Input.touches[0].deltaPosition.y;
+            transform.Rotate((pointer_y * rotationSpeed * Time.deltaTime), (-pointer_x * rotationSpeed * Time.deltaTime), 0, Space.World);
         }
             
 

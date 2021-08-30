@@ -5,9 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
+    public GameObject levelLoader;
+    
     // Start is called before the first frame update
     public void ChangeToMenu()
     {
-        SceneManager.LoadScene("Menu");
+         levelLoader.GetComponent<LevelLoaderScript>().LoadNextScene("Menu");
+
+    }
+
+    public void ChangeToRegister()
+    {
+        levelLoader.GetComponent<LevelLoaderScript>().LoadNextScene("Registration");
     }
 }

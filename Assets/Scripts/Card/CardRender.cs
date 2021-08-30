@@ -19,15 +19,14 @@ public class CardRender : MonoBehaviour
         GameObject cardObject =Instantiate(cardData.cardObject, new Vector3(0,1,-1.5f), Quaternion.identity);
         cardObject.name = cardData.cardName;
         cardObject.AddComponent<ObjectController>();
+        XRSurfaceController objectSurface = cardObject.AddComponent<XRSurfaceController>();
+        cardObject.tag = "ARObject";
+        objectSurface.displayImmediately = true;
+        // objectSurface.groundOnly = true;
         
         // Set Description from Card Data
         objectName.text = cardData.cardName;
         description.text = cardData.description;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
