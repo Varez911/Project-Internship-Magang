@@ -17,8 +17,6 @@ public class CardClick : MonoBehaviour
         
         _cardData = _card.GetComponent<CardDisplay>().cardData;
 
-        // StartCoroutine(LoadYourAsyncScene());
-        
         CardRender.cardData = _cardData;
         SceneManager.LoadScene("Main");
     }

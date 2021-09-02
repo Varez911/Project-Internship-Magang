@@ -8,25 +8,37 @@ public class CardRender : MonoBehaviour
 {
     public static CardData cardData;
 
+    [Header("Camera")] public GameObject mainCamera;
+    
     [Header("Description")] 
-    public TMP_Text objectName;
-    public TMP_Text description;
+    public GameObject horizontalLayout;
+    public TMP_Text descriptionText;
     
     // Start is called before the first frame update
     void Start()
     {
         // Render Card Object to Scene
-        GameObject cardObject =Instantiate(cardData.cardObject, new Vector3(0,1,-1.5f), Quaternion.identity);
+        GameObject cardObject = Instantiate(cardData.cardObject, new Vector3(0,2,0), Quaternion.identity);
         cardObject.name = cardData.cardName;
         cardObject.AddComponent<ObjectController>();
+        // cardObject.transform.parent = mainCamera.transform;
+        
+        // Attach XRSurfaceController to Object
         XRSurfaceController objectSurface = cardObject.AddComponent<XRSurfaceController>();
         cardObject.tag = "ARObject";
         objectSurface.displayImmediately = true;
         // objectSurface.groundOnly = true;
+        objectSurface.lockToFirstSurface = false;
+
+
+        // Set Object Name
+        for (int i = 0; i < horizontalLayout.transform.childCount; i++)
+        {
+            horizontalLayout.transform.GetChild(i).Find("Object Name").GetComponent<TMP_Text>().text = cardData.cardName;
+        }
         
         // Set Description from Card Data
-        objectName.text = cardData.cardName;
-        description.text = cardData.description;
+        descriptionText.text = cardData.description;
     }
 
 }

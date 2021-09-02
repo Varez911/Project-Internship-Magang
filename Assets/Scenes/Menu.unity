@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Padding:
     m_Left: 60
     m_Right: 0
-    m_Top: 140
+    m_Top: 200
     m_Bottom: 60
   m_ChildAlignment: 0
   m_Spacing: 30
@@ -2615,6 +2615,7 @@ GameObject:
   - component: {fileID: 978411063}
   - component: {fileID: 978411064}
   - component: {fileID: 978411065}
+  - component: {fileID: 978411066}
   m_Layer: 0
   m_Name: ButtonEvent
   m_TagString: Untagged
@@ -2661,6 +2662,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelLoader: {fileID: 224716749}
+--- !u!114 &978411066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978411062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 559462d7db2b76046bcec0c7a9e66652, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &983612823
 GameObject:
   m_ObjectHideFlags: 0
@@ -6022,7 +6035,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 295, y: -122}
+  m_AnchoredPosition: {x: 297, y: -163}
   m_SizeDelta: {x: 92.202835, y: 92.20282}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1812458060
