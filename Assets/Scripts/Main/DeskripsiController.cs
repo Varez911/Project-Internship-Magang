@@ -15,7 +15,7 @@ public class DeskripsiController : MonoBehaviour
     private int descriptionPage;
     
     private float lerpDuration = 2f; 
-    private float moveValue = -690; 
+    private float moveValue = -655; 
     private void Start()
     {
         descriptionPage = 1;

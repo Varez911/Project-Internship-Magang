@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityTemplateProjects.Card;
 
 public class CardRender : MonoBehaviour
@@ -15,8 +17,15 @@ public class CardRender : MonoBehaviour
     public TMP_Text descriptionText;
     
     // Start is called before the first frame update
+    private void Awake()
+    {
+        // SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex((int)SceneList.MAIN));
+    }
+
     void Start()
     {
+        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex((int)SceneList.MAIN));
+
         // Render Card Object to Scene
         GameObject cardObject = Instantiate(cardData.cardObject, new Vector3(0,2,0), Quaternion.identity);
         cardObject.name = cardData.cardName;
@@ -39,6 +48,8 @@ public class CardRender : MonoBehaviour
         
         // Set Description from Card Data
         descriptionText.text = cardData.description;
+        
+
     }
 
 }

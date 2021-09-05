@@ -10,7 +10,14 @@ using UnityTemplateProjects.Card;
 
 public class CardClick : MonoBehaviour
 {
+    
     private CardData _cardData;
+    private ChangeScene _changeScene;
+    private void Start()
+    {
+        _changeScene = GameObject.Find("App Manager").GetComponent<ChangeScene>();
+    }
+
     public void ShowObject()
     {
         GameObject _card = EventSystem.current.currentSelectedGameObject;
@@ -18,7 +25,7 @@ public class CardClick : MonoBehaviour
         _cardData = _card.GetComponent<CardDisplay>().cardData;
 
         CardRender.cardData = _cardData;
-        SceneManager.LoadScene("Main");
+        _changeScene.ChangeToMain();
     }
     
 }

@@ -16,7 +16,7 @@ public class LoadingAnimation : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         rotationDegree += 12f;
         loadingIcon.transform.rotation = Quaternion.Euler(0, 0, rotationDegree % 360);
