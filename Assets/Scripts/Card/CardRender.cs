@@ -27,7 +27,7 @@ public class CardRender : MonoBehaviour
         SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex((int)SceneList.MAIN));
 
         // Render Card Object to Scene
-        GameObject cardObject = Instantiate(cardData.cardObject, new Vector3(0,2,0), Quaternion.identity);
+        GameObject cardObject = Instantiate(cardData.cardObject, new Vector3(0,1,0), Quaternion.identity);
         cardObject.name = cardData.cardName;
         cardObject.AddComponent<ObjectController>();
         // cardObject.transform.parent = mainCamera.transform;
@@ -37,7 +37,7 @@ public class CardRender : MonoBehaviour
         cardObject.tag = "ARObject";
         objectSurface.displayImmediately = true;
         // objectSurface.groundOnly = true;
-        objectSurface.lockToFirstSurface = false;
+        objectSurface.lockToFirstSurface = true;
 
 
         // Set Object Name

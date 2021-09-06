@@ -9,7 +9,10 @@ public class ARViewController : MonoBehaviour
 
     public GameObject mainCamera;
     public GameObject ARCamera;
-    
+    public GameObject resetButton;
+    public GameObject xrController;
+
+    [Space] public GameObject surfaceAR;
     //==================================
     private GameObject arObject;
     private ObjectController arObjectController;
@@ -24,15 +27,22 @@ public class ARViewController : MonoBehaviour
     {
         if (toggleARView.isOn)
         {
+            arObject.SetActive(false);
             ARCamera.SetActive(true); 
             mainCamera.SetActive(false);
-            arObjectController.enabled = false;
+            resetButton.SetActive(true);
+            xrController.SetActive(true);
+            
+
+            //arObjectController.enabled = false;
         }
         else
         {
             ARCamera.SetActive(false);
             mainCamera.SetActive(true);
-            arObjectController.enabled = true;
+            resetButton.SetActive(false);
+            xrController.SetActive(false);
+            //arObjectController.enabled = true;
         }
     }
 }
