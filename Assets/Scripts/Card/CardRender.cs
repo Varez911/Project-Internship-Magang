@@ -10,7 +10,7 @@ public class CardRender : MonoBehaviour
 {
     public static CardData cardData;
 
-    [Header("Camera")] public GameObject mainCamera;
+    [Header("3D Mode")] public GameObject _3DMode;
     
     [Header("Description")] 
     public GameObject horizontalLayout;
@@ -28,17 +28,21 @@ public class CardRender : MonoBehaviour
 
         // Render Card Object to Scene
         GameObject cardObject = Instantiate(cardData.cardObject, new Vector3(0,1,0), Quaternion.identity);
+        cardObject.transform.parent = _3DMode.transform;
+        cardObject.tag = "ARObject";
+
+        
+        // Mengubah nama Object
         cardObject.name = cardData.cardName;
         cardObject.AddComponent<ObjectController>();
         // cardObject.transform.parent = mainCamera.transform;
         
-        // Attach XRSurfaceController to Object
+        /*// Attach XRSurfaceController to Object
         XRSurfaceController objectSurface = cardObject.AddComponent<XRSurfaceController>();
-        cardObject.tag = "ARObject";
+        objectSurface.enabled = false;
         objectSurface.displayImmediately = true;
         // objectSurface.groundOnly = true;
-        objectSurface.lockToFirstSurface = true;
-
+        objectSurface.lockToFirstSurface = true;*/
 
         // Set Object Name
         for (int i = 0; i < horizontalLayout.transform.childCount; i++)
@@ -48,8 +52,6 @@ public class CardRender : MonoBehaviour
         
         // Set Description from Card Data
         descriptionText.text = cardData.description;
-        
-
     }
 
 }

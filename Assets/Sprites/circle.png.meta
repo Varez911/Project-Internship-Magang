@@ -64,8 +64,8 @@ TextureImporter:
     maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
-    compressionQuality: 50
+    textureCompression: 0
+    compressionQuality: 74
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
@@ -76,8 +76,8 @@ TextureImporter:
     maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
-    compressionQuality: 50
+    textureCompression: 0
+    compressionQuality: 74
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
@@ -100,8 +100,8 @@ TextureImporter:
     maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
-    compressionQuality: 50
+    textureCompression: 0
+    compressionQuality: 74
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0

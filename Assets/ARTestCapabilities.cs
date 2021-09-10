@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class ARTestCapabilities : MonoBehaviour
 {
-    public XRController xrController;
 
     private void Start()
     {

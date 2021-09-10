@@ -51,9 +51,18 @@ public class RegistrationScript : MonoBehaviour
         {
             listMessages.Add("No Handphone");
         }
+        else if (noHandphone.text.Length < 5 || !noHandphone.text.StartsWith("0"))
+        {
+            _alertMessage += "No Handphone tidak valid. ";
+        }
+        
         if (String.IsNullOrEmpty(email.text))
         {
             listMessages.Add("Email");                                       
+        }
+        else if (!email.text.Contains("@"))
+        {
+            _alertMessage += "Email tidak valid. ";
         }
 
         if (listMessages.Count > 0)
@@ -62,20 +71,9 @@ public class RegistrationScript : MonoBehaviour
             _alertMessage += ConstructMessage();
         }
 
-        if (noHandphone.text.Length < 5 || !noHandphone.text.StartsWith("0"))
-        {
-            _alertMessage += " No Handphone tidak valid";
-        }
-
-        if (!email.text.Contains("@"))
-        {
-            _alertMessage += "Email tidak valid";
-        }
-
         if (String.IsNullOrEmpty(_alertMessage))
         {
             SaveDataPlayer(); 
-            
         }
         else
         {

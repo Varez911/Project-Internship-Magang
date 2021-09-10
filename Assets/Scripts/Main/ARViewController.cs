@@ -7,42 +7,52 @@ public class ARViewController : MonoBehaviour
 {
     public Toggle toggleARView;
 
-    public GameObject mainCamera;
-    public GameObject ARCamera;
-    public GameObject resetButton;
-    public GameObject xrController;
 
-    [Space] public GameObject surfaceAR;
+    [Space]
+    [Header("3D Mode")]
+    public GameObject _3DMode;
+    public GameObject mainCamera;
+
+    [Header("AR Mode")]
+    public GameObject aRMode;
+
+    [Header("UI")] public GameObject deskripsiPanel;
     //==================================
     private GameObject arObject;
     private ObjectController arObjectController;
     private XRCameraController cameraARController;
+    
     // Start is called before the first frame update
     void Start()
     {
-        arObject = GameObject.FindWithTag("ARObject");
+        
+
     }
 
     public void ViewUpdate()
     {
+        foreach (Transform child in _3DMode.transform)
+        {
+            Debug.Log(child.name);
+            if (child.tag == "ARObject")
+                arObject = child.gameObject;
+        }
         if (toggleARView.isOn)
         {
-            arObject.SetActive(false);
-            ARCamera.SetActive(true); 
             mainCamera.SetActive(false);
-            resetButton.SetActive(true);
-            xrController.SetActive(true);
-            
-
-            //arObjectController.enabled = false;
+            aRMode.SetActive(true);
+            arObject.transform.parent = aRMode.transform.Find("ARSurface");
+            arObject.SetActive(false);
+            deskripsiPanel.SetActive(false);
         }
         else
         {
-            ARCamera.SetActive(false);
             mainCamera.SetActive(true);
-            resetButton.SetActive(false);
-            xrController.SetActive(false);
-            //arObjectController.enabled = true;
+            aRMode.SetActive(false);
+            arObject.transform.parent = _3DMode.transform;
+            arObject.SetActive(true);
+            deskripsiPanel.SetActive(true);
+
         }
     }
 }

@@ -17,7 +17,6 @@ public class ChangeScene : MonoBehaviour
         SceneManager.LoadSceneAsync((int)SceneList.MENU, LoadSceneMode.Additive);
     }
 
-    // Start is called before the first frame update
     public void ChangeToMenu()
     {
          // levelLoader.GetComponent<LevelLoaderScript>().LoadNextScene("Menu");
