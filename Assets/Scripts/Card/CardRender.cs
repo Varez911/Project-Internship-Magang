@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DigitalRubyShared;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -35,6 +36,7 @@ public class CardRender : MonoBehaviour
         // Mengubah nama Object
         cardObject.name = cardData.cardName;
         cardObject.AddComponent<ObjectController>();
+        // cardObject.AddComponent<FingersScript>();
         // cardObject.transform.parent = mainCamera.transform;
         
         /*// Attach XRSurfaceController to Object

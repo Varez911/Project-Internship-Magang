@@ -6,12 +6,13 @@ using UnityEngine;
 public class AROnSurface : MonoBehaviour
 {
     private GameObject _arObject;
-
+    public GameObject _loadingAR;
     
 
     public void SearchSurfaces(GameObject _placeButton)
     {
         Debug.Log("Surfaces Detected");
+        _loadingAR.SetActive(false);
     }
     
     public void RenderObjectOnSurface(GameObject _arSurface)

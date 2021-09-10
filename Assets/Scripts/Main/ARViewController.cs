@@ -42,7 +42,8 @@ public class ARViewController : MonoBehaviour
             mainCamera.SetActive(false);
             aRMode.SetActive(true);
             arObject.transform.parent = aRMode.transform.Find("ARSurface");
-            arObject.SetActive(false);
+            arObject.transform.position = new Vector3(0,0,2);
+            // arObject.SetActive(false);
             deskripsiPanel.SetActive(false);
         }
         else
@@ -50,6 +51,7 @@ public class ARViewController : MonoBehaviour
             mainCamera.SetActive(true);
             aRMode.SetActive(false);
             arObject.transform.parent = _3DMode.transform;
+            arObject.transform.position = new Vector3(0,1,0);
             arObject.SetActive(true);
             deskripsiPanel.SetActive(true);
 
